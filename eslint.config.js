@@ -13,23 +13,30 @@ export default defineConfig([
       'build/**', // 忽略build目录
       'coverage/**', // 忽略测试覆盖率报告
       '*.config.js', // 忽略所有配置文件
-      '**/*.min.js' // 忽略所有压缩文件
-    ]
+      '**/*.min.js', // 忽略所有压缩文件
+    ],
   },
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,vue}'],
     plugins: { js, prettier: prettierPlugin },
     extends: ['js/recommended', prettierConfig],
-    rules: { semi: 'off', 'prettier/prettier': 'error' }
+    rules: {
+      semi: 'off',
+      indent: 'off',
+      'no-trailing-spaces': 'off',
+      'keyword-spacing': 'off',
+      'space-infix-ops': 'off',
+      'prettier/prettier': 'error',
+    },
   },
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,vue}'],
-    languageOptions: { globals: { ...globals.browser, ...globals.node } }
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
   },
   tseslint.configs.recommended,
   pluginVue.configs['flat/essential'],
   {
     files: ['**/*.vue'],
-    languageOptions: { parserOptions: { parser: tseslint.parser } }
-  }
+    languageOptions: { parserOptions: { parser: tseslint.parser } },
+  },
 ])
