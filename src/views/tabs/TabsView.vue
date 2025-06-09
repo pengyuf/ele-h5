@@ -1,14 +1,14 @@
 <template>
   <RouterView />
-  <Tabbar v-model="active">
-    <TabbarItem name="home" icon="home-o">首页</TabbarItem>
-    <TabbarItem name="order" icon="bars">订单</TabbarItem>
-    <TabbarItem name="me" icon="contact">我的</TabbarItem>
-  </Tabbar>
+  <VanTabbar v-model="active">
+    <VanTabbarItem name="home" icon="home-o">首页</VanTabbarItem>
+    <VanTabbarItem name="order" icon="bars">订单</VanTabbarItem>
+    <VanTabbarItem name="me" icon="contact">我的</VanTabbarItem>
+  </VanTabbar>
 </template>
 
 <script setup lang="ts">
-import { Tabbar, TabbarItem } from 'vant'
+// import { Tabbar, TabbarItem } from 'vant'
 import { ref, watch } from 'vue'
 import { RouterView, useRoute, useRouter } from 'vue-router'
 
