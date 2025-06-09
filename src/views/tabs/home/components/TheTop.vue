@@ -6,15 +6,15 @@
       <img class="shopcart-icon" src="@/assets/imgs/index_page/shopcart.png" />
       <img class="comments-icon" src="@/assets/imgs/index_page/comments.png" />
     </div>
-    <VanSearch
+    <OpSearch
       shape="round"
       background="linear-gradient(to right, rgb(53, 200, 250), rgb(31, 175, 243))"
       placeholder="世界茶饮 35减5"
     >
       <template #right-icon>
         <div>搜索</div>
-      </template>
-    </VanSearch>
+      </template></OpSearch
+    >
     <div class="search-recommend">
       <div class="tag" v-for="v in recomments" :key="v.value">
         {{ v.label }}
@@ -24,6 +24,7 @@
 </template>
 
 <script setup lang="ts">
+import OpSearch from '../../../../components/OpSearch.vue'
 import type { ISearchRecomment } from '@/types'
 interface IProps {
   recomments: ISearchRecomment[]
