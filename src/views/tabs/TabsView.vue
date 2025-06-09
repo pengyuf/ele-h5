@@ -8,7 +8,6 @@
 </template>
 
 <script setup lang="ts">
-// import { Tabbar, TabbarItem } from 'vant'
 import { ref, watch } from 'vue'
 import { RouterView, useRoute, useRouter } from 'vue-router'
 

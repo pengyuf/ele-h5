@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "axios": "^1.9.0",
+    "normalize.css": "^8.0.1",
     "vant": "^4.9.19",
     "vue": "^3.5.13",
     "vue-router": "^4.5.1"
@@ -25,6 +26,7 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@eslint/js": "^9.28.0",
+    "@types/node": "^22.15.30",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/tsconfig": "^0.7.0",
     "amfe-flexible": "^2.2.1",
@@ -39,6 +41,7 @@
     "postcss": "^8.5.4",
     "postcss-pxtorem": "^6.1.0",
     "prettier": "^3.5.3",
+    "sass": "^1.89.1",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.33.1",
     "unplugin-vue-components": "^28.7.0",
