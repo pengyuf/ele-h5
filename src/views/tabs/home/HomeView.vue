@@ -7,13 +7,18 @@
       ></SearchView>
     </Transition>
     <TheTop :recomments="recomments" @searchClick="toggleSearchView" />
-    {{ pending }}
-    {{ data }}
+    <OpLoadingView :loading="pending" type="loading">
+      <template #template>
+        <div>loading</div>
+      </template>
+      <div>{{ data }}</div>
+    </OpLoadingView>
   </div>
 </template>
 
 <script setup lang="ts">
 import { fetchHomePageData } from '../../../api/home'
+import OpLoadingView from '../../../components/OpLoadingView.vue'
 import { useAsync } from '../../../use/useAsync'
 import { useToggle } from '../../../use/useToggle'
 import SearchView from '../../search/SearchView.vue'
