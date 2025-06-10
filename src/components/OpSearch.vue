@@ -19,6 +19,7 @@
               class="op-field__control"
               :value="modelValue"
               :placeholder="placeholder"
+              @click="emits('inputClick')"
               @keypress="onKeypress"
               @input="
                 (e) =>
@@ -63,6 +64,7 @@ interface IEmits {
   (e: 'cancel'): void
   (e: 'clear'): void
   (e: 'update:modelValue', v?: string | number): void
+  (e: 'inputClick'): void
 }
 
 const props = defineProps<IProps>()
