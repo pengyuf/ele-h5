@@ -21,3 +21,18 @@ interface IProps {
 
 defineProps<IProps>()
 </script>
+
+<style lang="scss" scoped>
+.op-loading-view {
+  background: white;
+  .loading-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  .skeleton-wrapper {
+    padding: 20px 10px;
+  }
+}
+</style>

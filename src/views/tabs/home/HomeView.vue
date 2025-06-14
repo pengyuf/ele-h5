@@ -17,6 +17,7 @@
 </template>
 
 <script setup lang="ts">
+import type { ICountdown, IHomeInfo } from '../../../types'
 import { fetchHomePageData } from '../../../api/home'
 import OpLoadingView from '../../../components/OpLoadingView.vue'
 import { useAsync } from '../../../use/useAsync'
@@ -31,7 +32,14 @@ const recomments = [
   { value: 2, label: '色拉' },
 ]
 
-const { pending, data } = useAsync(fetchHomePageData, {})
+const { pending, data } = useAsync(fetchHomePageData, {
+  banner: [],
+  searchRecomments: [],
+  transformer: [],
+  scrollBarInfoList: [],
+  countdown: {} as ICountdown,
+  activities: [],
+} as IHomeInfo)
 </script>
 
 <style setup scoped>
