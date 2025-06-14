@@ -1,11 +1,13 @@
 <template>
   <div class="home-scroll-bar">
-    <div class="home-scroll-bar-swipe">
+    <div class="home-scroll-bar__swipe">
       <div ref="containerRef">
         <div class="swipe-item" v-for="v in props.data" :key="v.type">
-          <span class="info-badge">{{ v.badge }}</span>
-          <span class="info-detail" v-html="v.detail"></span>
-          <span class="info-btn op-thin-border">{{ v.btn }}</span>
+          <div class="scroll-bar__info" :class="`scroll-bar__info__${v.type}`">
+            <span class="info-badge">{{ v.badge }}</span>
+            <span class="info-detail" v-html="v.detail"></span>
+            <span class="info-btn op-thin-border">{{ v.btn }}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -43,7 +45,7 @@ onMounted(() => {
   useInterval(() => {
     index++
     if (index >= count) {
-      firstSwipeItem.style.transform = `translateY(${index * props.height})px`
+      firstSwipeItem.style.transform = `translateY(${index * props.height}px)`
       const timer = setTimeout(() => {
         firstSwipeItem.style.transform = ''
         container.style.transform = ''
@@ -52,7 +54,7 @@ onMounted(() => {
       }, props.transtionTime)
     }
 
-    container.style.transform = `translateY(-${index * props.height})px`
+    container.style.transform = `translateY(-${index * props.height}px)`
     container.style.transition = `all linear ${props.transtionTime}ms`
     index = index % count
   }, props.intervalTime)
