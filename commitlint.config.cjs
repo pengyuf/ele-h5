@@ -15,9 +15,9 @@ module.exports = {
         'chore', // 构建过程或辅助工具的变动
         'revert', // 回退
         'build', // 打包
-        'ci' // CI 相关变更
-      ]
+        'ci', // CI 相关变更
+      ],
     ],
-    'subject-case': [0] // 不限制 subject 的大小写
-  }
+    'subject-case': [0], // 不限制 subject 的大小写
+  },
 }
