@@ -17,7 +17,9 @@
       </div>
       <TheTransformer :data="data.transformer" />
       <ScrollBar :data="data.scrollBarInfoList" />
-      <div class="home-page__activity"></div>
+      <div class="home-page__activity">
+        <CountDown :data="data.countdown"></CountDown>
+      </div>
     </OpLoadingView>
   </div>
 </template>
@@ -32,6 +34,7 @@ import SearchView from '../../search/SearchView.vue'
 import TheTop from './components/TheTop.vue'
 import ScrollBar from './components/ScrollBar.vue'
 import TheTransformer from './components/TheTransformer.vue'
+import CountDown from './components/CountDown.vue'
 
 const [isSearchViewShow, toggleSearchView] = useToggle(false)
 
